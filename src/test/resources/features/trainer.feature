@@ -1,7 +1,11 @@
-Feature: Starting a game
+Feature: Starting a new game
   As a User,
-  I want to start a game,
+  I want to start a new game,
   In order to play Lingo
+
+Scenario: A new game starts
+  When I select "Start a new game"
+  Then I should see the first letter of a 5 letter word in round 1
 
 Feature: See the first letter
   As a User,
