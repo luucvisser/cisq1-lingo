@@ -4,8 +4,10 @@ Feature: Starting a new game
   In order to play Lingo
 
 Scenario: Starting a new game
-  When I select "Start a new game"
-  Then I should see the first letter of a 5 letter word in round 1
+  When I start a new game
+  Then The word to guess has "5" letters
+  And I should see the first letter
+  And My score is "0"
 
 
 Feature: See the first letter
@@ -68,6 +70,7 @@ Scenario Outline: Starting a new round
   And The last word had "<previous length>" letters
   When I start a new round
   Then The word to guess has "<next length>" letters
+  And I should see the first letter
   Examples:     | previous length | next length |     | 5               | 6           |     | 6               | 7           |     | 7               | 5           |
   # Failure path
   Given I am playing a game
